@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="websocket.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div id="wrapper">
+		<h1>Roulette Casino</h1>
+		<p>Welcome to the roulette board. Type your name and start the
+			play.</p>
+		<br />
+		<div id="addDevice">
+			<div class="button">
+				<a href="#" OnClick="showForm()">Add a device</a>
+			</div>
+			<form id="addDeviceForm">
+				<h3>Add a new device</h3>
+				<span>Name: <input type="text" name="device_name"
+					id="device_name"></span> <span>Type: <select
+					id="device_type">
+						<option name="type" value="Appliance">Appliance</option>
+						<option name="type" value="Electronics">Electronics</option>
+						<option name="type" value="Lights">Lights</option>
+						<option name="type" value="Other">Other</option>
+				</select></span> <span>Description:<br /> <textarea name="description"
+						id="device_description" rows="2" cols="50"></textarea>
+				</span> <input type="button" class="button" value="Add"
+					onclick=formSubmit()><input type="reset" class="button"
+					value="Cancel" onclick=hideForm()>
+			</form>
+		</div>
+		<br />
+		<div id="addPlayerDetails">
+			<div class="button">
+				<a href="#" OnClick="showForm()">Add player details</a>
+			</div>
+			<form id="addPlayerForm">
+				<h3>Manage user data:</h3>
+				<span>Player Nick: <input type="text" name="player_nick"
+					id="player_nick"></span> <br /> <span>Budget: <input
+					type="number" name="player_budget" id="player_budget"></span><br />
+				<br /> <input type="button" class="button" value="Set"
+					onclick=formPlayerSubmit()><input type="reset"
+					class="button" value="Cancel" onclick=hideForm()>
+			</form>
+		</div>
+		<br />
+
+		<div id="addPlayerBets">
+			<div class="button">
+				<a href="#" OnClick="showForm()">Add bets</a>
+			</div>
+			<form id="addBetForm">
+				<h3>Manage user bets:</h3>
+				<span>Bet type: <select id="bet_type">
+						<option name="bet_type" value="STRIGHTUP">STRIGHTUP</option>
+						<option name="bet_type" value="SPLIT">SPLIT</option>
+						<option name="bet_type" value="STREET">STREET</option>
+						<option name="bet_type" value="CORNER">CORNER</option>
+						<option name="bet_type" value="FIVE">FIVE</option>
+						<option name="bet_type" value="SIXLINE">SIXLINE</option>
+						<option name="bet_type" value="COLUMN1">COLUMN1</option>
+						<option name="bet_type" value="COLUMN2">COLUMN2</option>
+						<option name="bet_type" value="COLUMN3">COLUMN3</option>
+						<option name="bet_type" value="DOZEN1">DOZEN1</option>
+						<option name="bet_type" value="DOZEN2">DOZEN2</option>
+						<option name="bet_type" value="DOZEN3">DOZEN3</option>
+						<option name="bet_type" value="EVEN">EVEN</option>
+						<option name="bet_type" value="ODD">ODD</option>
+						<option name="bet_type" value="HALF1">HALF1</option>
+						<option name="bet_type" value="HALF2">HALF2</option>
+						<option name="bet_type" value="BLACK">BLACK</option>
+						<option name="bet_type" value="RED">RED</option>
+				</select>
+				</span> <span>fields: <input type="text" name="bet_fields"
+					id="bet_fields"></span> <span>value: <input type="number"
+					name="bet_value" id="bet_value"></span><br /> <br /> <input
+					type="button" class="button" value="Set Bet"
+					onclick=formBetSubmit()><input type="reset" class="button"
+					value="Cancel" onclick=hideForm()>
+			</form>
+		</div>
+		<br />
+
+		<h3>Currently connected devices:</h3>
+		<div id="content"></div>
+		<h3>Players on the board:</h3>
+		<div id="players"></div>
+		<h3>Player bets:</h3>
+		<div id="bets"></div>
+		<h3>Play state:</h3>
+		<div id="state"></div>
+	</div>
+
+</body>
+</html>

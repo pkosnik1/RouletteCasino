@@ -1,0 +1,22 @@
+.roulette_container{
+  margin:0 auto;
+}
+
+#roulette_image{
+  animation: rotate_wheel 8s 1 cubic-bezier(.14,-0.52,.12,.56);
+  height: 200px;
+  width: 200px;
+  background: #1C7022;
+  position: relative;
+
+}
+
+@keyframes rotate_wheel {
+   0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(100deg);
+  }
+}
